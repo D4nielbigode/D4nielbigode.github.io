@@ -4,45 +4,183 @@
   <meta charset="UTF-8">
   <title>Portfólio de Daniel</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body { font-family: Arial, sans-serif; margin: 40px; background: #f2f2f2; color: #222; }
-    .container { max-width: 800px; margin: auto; background: #fff; padding: 32px; border-radius: 12px; box-shadow: 0 4px 8px #0002; }
-    h1 { color: #3264fe; }
-    h2 { border-bottom: 1px solid #eee; }
-    ul { list-style: none; padding-left: 0; }
-    li { margin-bottom: 12px; }
-    .proj { background: #f8f9fa; padding: 12px; border-radius: 5px; }
-    a { color: #3264fe; text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    :root {
+      --primary: #3f51b5;
+      --accent: #00d2ff;
+      --background: #f5f6fa;
+      --card-bg: #fff;
+      --shadow: 0 8px 24px rgba(60, 60, 60, 0.07);
+      --radius: 18px;
+      --text: #2a2a2a;
+      --gray: #78849e;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: linear-gradient(120deg, var(--primary) 0%, var(--accent) 100%);
+      min-height: 100vh;
+      color: var(--text);
+    }
+    .container {
+      max-width: 900px;
+      margin: 48px auto;
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 40px 32px 32px 32px;
+      position: relative;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 36px;
+    }
+    .avatar {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--primary);
+      box-shadow: 0 2px 10px #0002;
+    }
+    h1 {
+      margin: 0;
+      font-size: 2.6rem;
+      font-weight: 700;
+      background: linear-gradient(120deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .headline {
+      color: var(--gray);
+      font-size: 1.2rem;
+      margin-top: 6px;
+    }
+    section {
+      margin-bottom: 2.2rem;
+    }
+    h2 {
+      font-size: 1.35rem;
+      color: var(--primary);
+      margin-bottom: 0.8rem;
+      border-left: 4px solid var(--accent);
+      padding-left: 10px;
+    }
+    .projects {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    .project-card {
+      background: var(--background);
+      border-radius: 14px;
+      box-shadow: 0 2px 10px #0001;
+      flex: 1 1 260px;
+      min-width: 240px;
+      padding: 18px 14px 14px 18px;
+      transition: transform .15s, box-shadow .15s;
+      border-left: 4px solid var(--primary);
+    }
+    .project-card:hover {
+      transform: translateY(-5px) scale(1.025);
+      box-shadow: 0 8px 32px #3f51b540;
+      border-left-color: var(--accent);
+    }
+    .project-title {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--primary);
+    }
+    .project-desc {
+      color: var(--text);
+      font-size: 0.98rem;
+      margin: 6px 0 0 0;
+    }
+    .project-link {
+      display: inline-block;
+      margin-top: 12px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.97rem;
+      transition: color .2s;
+    }
+    .project-link:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+    .contact-list {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+      font-size: 1.04rem;
+    }
+    .contact-list a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color .15s;
+    }
+    .contact-list a:hover {
+      color: var(--accent);
+    }
+    @media (max-width: 600px) {
+      .container { padding: 20px 5vw 16px 5vw; }
+      header { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .avatar { width: 80px; height: 80px; }
+      .projects { flex-direction: column; gap: 16px; }
+      .project-card { min-width: 0; }
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Daniel - Portfólio</h1>
-    <p>Olá! Sou Daniel, desenvolvedor apaixonado por tecnologia e programação. Veja abaixo alguns dos meus projetos e como entrar em contato comigo.</p>
+    <header>
+      <img src="https://avatars.githubusercontent.com/u/1013298089?v=4" alt="Avatar de Daniel" class="avatar">
+      <div>
+        <h1>Daniel Bigode</h1>
+        <div class="headline">Desenvolvedor Full Stack &amp; entusiasta de tecnologia</div>
+      </div>
+    </header>
 
-    <h2>Sobre Mim</h2>
-    <p>Descreva aqui um pouco sobre você, sua experiência, tecnologias favoritas e objetivos profissionais.</p>
+    <section>
+      <h2>Sobre Mim</h2>
+      <p>
+        Olá! Sou apaixonado por programação, sempre buscando aprender novas tecnologias e criar soluções inovadoras.
+        Tenho experiência em desenvolvimento web, backend e automação. Estou sempre aberto para novos desafios!
+      </p>
+    </section>
 
-    <h2>Projetos em Destaque</h2>
-    <ul>
-      <li class="proj">
-        <strong>Projeto 1:</strong> <a href="https://github.com/D4nielbigode/NOME_DO_PROJETO1">Nome do Projeto 1</a><br>
-        <em>Breve descrição do projeto 1.</em>
-      </li>
-      <li class="proj">
-        <strong>Projeto 2:</strong> <a href="https://github.com/D4nielbigode/NOME_DO_PROJETO2">Nome do Projeto 2</a><br>
-        <em>Breve descrição do projeto 2.</em>
-      </li>
-      <!-- Adicione mais projetos aqui -->
-    </ul>
+    <section>
+      <h2>Projetos em Destaque</h2>
+      <div class="projects">
+        <div class="project-card">
+          <div class="project-title">Projeto 1</div>
+          <div class="project-desc">Descrição breve do projeto 1, mostrando suas funcionalidades principais ou tecnologias usadas.</div>
+          <a class="project-link" href="https://github.com/D4nielbigode/NOME_DO_PROJETO1" target="_blank">Ver no GitHub</a>
+        </div>
+        <div class="project-card">
+          <div class="project-title">Projeto 2</div>
+          <div class="project-desc">Descrição breve do projeto 2. Fale sobre o que ele resolve e por que é interessante.</div>
+          <a class="project-link" href="https://github.com/D4nielbigode/NOME_DO_PROJETO2" target="_blank">Ver no GitHub</a>
+        </div>
+        <!-- Adicione mais projetos conforme desejar -->
+      </div>
+    </section>
 
-    <h2>Contato</h2>
-    <ul>
-      <li>Email: seuemail@exemplo.com</li>
-      <li>LinkedIn: <a href="https://linkedin.com/in/seuusuario" target="_blank">Seu LinkedIn</a></li>
-      <li>GitHub: <a href="https://github.com/D4nielbigode" target="_blank">D4nielbigode</a></li>
-    </ul>
+    <section>
+      <h2>Contato</h2>
+      <div class="contact-list">
+        <div>Email: seuemail@exemplo.com</div>
+        <div><a href="https://linkedin.com/in/seuusuario" target="_blank">LinkedIn</a></div>
+        <div><a href="https://github.com/D4nielbigode" target="_blank">GitHub</a></div>
+      </div>
+    </section>
   </div>
 </body>
 </html>
